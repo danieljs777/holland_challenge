@@ -7,7 +7,7 @@ This application is a Laravel Command that parses, process and persist JSON obje
 
 The database structure is made for scalable and future features, separating clients from credit cards and addresses (these could eventually became 1-N relationships, because clients can have multiple credit cards and addresses)
 
-Taking scalability in mind, the addresses table is expanded into multiple attributes and the scripts tries to parse a single line address (but not 100% accurate, because there is no default format for the JSON given).
+Taking scalability in mind, the addresses table is expanded into multiple attributes and the scripts tries to parse a single line address (but not 100% accurate, because there is no default format for the addresses in JSON given).
 
 Both age and credit card requirements were implemented as simples as it can be.
 
