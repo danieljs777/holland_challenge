@@ -20,16 +20,19 @@ In my machine (both app and database server) I really had a nice performance hav
 
 The script also can be called with an argument pointing out what file should be processed. challenge.json is the default, if none is set.
 
-I had use Database transactions to avoid duplicity when stopping/starting the process, or if there are any errors, the transactions (per item) is not committed.
+I had use Database transactions together with the batches design to avoid duplicity when stopping/starting the process, or if there are any errors, the transactions (per item) is not committed.
 Only when a registry is successfully persisted, the transactions is committed. If the JSON is fully processed, the batch is marked as finished, and another new processing will start over again.
 
 Get start: 
 
 git clone https://github.com/danieljs777/holland_challenge.git
+
 composer update
+
 sudo cp .env.example .env
 
 Set the database connection in .env
 
 php artisan migrate
+
 php artisan import:json
